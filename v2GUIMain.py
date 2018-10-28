@@ -24,7 +24,7 @@ def OnEnter(self, event):
         input = self.txt.GetValue()
         input = input.lower()
         try:
-            app_id = "L4RJL5-LXGEWXRRAH"
+            app_id = "XXXXX-XXXXXXXXXX"
             client = wolframalpha.Client(app_id)
             res = client.query(input)
             answer = next(res.results).text

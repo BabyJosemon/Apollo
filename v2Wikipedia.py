@@ -1,6 +1,6 @@
 import wikipedia
 import wolframalpha
-app_id = "L4RJL5-LXGEWXRRAH"
+app_id = "XXXXX-XXXXXXXXXX"
 while True:
     input = raw_input("Question: ")
     try:

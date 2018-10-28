@@ -1,5 +1,6 @@
 # Apollo - The Personal Assistant
 Can answer General and Mathematical questions but not quite the chatbot yet.
+
 Required:
 1) Python 2.7
 2) WolframAlpha- for General Questions and Mathematical Questions

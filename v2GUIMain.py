@@ -1,6 +1,10 @@
 import wx
 import wikipedia
 import wolframalpha
+import pyttsx
+
+engine = pyttsx.init()
+engine.say('Welcome to Apollo, How can I help you?')
 class MyFrame(wx.Frame):
     def __init__(self):
         wx.Frame.__init__(self, None,
@@ -19,12 +23,13 @@ class MyFrame(wx.Frame):
         my_sizer.Add(self.txt, 0, wx.ALL, 5)
         panel.SetSizer(my_sizer)
         self.Show()
+        engine.runAndWait()
 
-def OnEnter(self, event):
+    def OnEnter(self, event):
         input = self.txt.GetValue()
         input = input.lower()
         try:
-            app_id = "XXXXX-XXXXXXXXXX"
+            app_id = "XXXXXX-XXXXXXXXX"
             client = wolframalpha.Client(app_id)
             res = client.query(input)
             answer = next(res.results).text

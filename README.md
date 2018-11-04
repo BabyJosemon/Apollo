@@ -1,5 +1,6 @@
 # Apollo - The Personal Assistant
 Can answer General and Mathematical questions but not quite the chatbot yet.
+To use voice leave textbox blank, press enter and speak. 
 
 Required:
 1) Python 2.7

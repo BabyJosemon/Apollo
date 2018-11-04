@@ -2,6 +2,7 @@ import wx
 import wikipedia
 import wolframalpha
 import pyttsx
+import speech_recognition as sr
 
 engine = pyttsx.init()
 engine.say('Welcome to Apollo, How can I help you?')
@@ -27,18 +28,31 @@ class MyFrame(wx.Frame):
 
     def OnEnter(self, event):
         input = self.txt.GetValue()
+        engine2 = pyttsx.init()
         input = input.lower()
-        try:
-            app_id = "XXXXXX-XXXXXXXXX"
-            client = wolframalpha.Client(app_id)
-            res = client.query(input)
-            answer = next(res.results).text
-            print answer
-        except:
-            input = input.split(' ')
-            input = " ".join(input[2:])
-            print wikipedia.summary(input)
-
+        if input == '':
+            r = sr.Recognizer()
+            with sr.Microphone() as source:
+                audio = r.listen(source)
+            try:
+                self.txt.SetValue(r.recognize_google(audio))
+            except sr.UnknownValueError:
+                print("Google Speech Recognition could not understand audio")
+            except sr.RequestError as e:
+                print("Could not request results from Google Speech Recognition service; {0}".format(e))
+        else:
+            try:
+                app_id = "L4RJL5-LXGEWXRRAH"
+                client = wolframalpha.Client(app_id)
+                res = client.query(input)
+                answer = next(res.results).text
+                print answer
+                engine.say("The Answer is " + answer)
+            except:
+                engine2.say("Searching for " + input)
+                engine2.runAndWait()
+                print wikipedia.summary(input, sentences = 2)
+                
 
 if __name__ == "__main__":
     app = wx.App(True)

@@ -3,11 +3,11 @@ Can answer General and Mathematical questions but not quite the chatbot yet.
 
 Required:
 1) Python 2.7
-2) WolframAlpha- for General Questions and Mathematical Questions
+2) WolframAlpha- for General Questions and Mathematical Questions.
 ```python
 pip install wolframalpha
 ```
-3) Wikipedia- for the wikipedia Encyclopedia
+3) Wikipedia- for the wikipedia Encyclopedia.
 ```python
 pip install wikipedia
 ```
@@ -15,11 +15,23 @@ pip install wikipedia
 ```python
 pip install -U wxPython
 ```
+5) pyttsx - Python text to speech Synthesizer.
+```python
+pip install pyttsx
+```
+6) Speech-recognition
+```python
+pip install SpeechRecognition
+```
+7) PyAudio
+```python
+pip install PyAudio
+```
+
 
 Requires an API Key of [WolframAlpha.](https://products.wolframalpha.com/api/)
 
 ***
 
 **TODO**
-1) Speech Capabilities
-2) Chatbot Functionalities.
+1) Chatbot Functionalities.

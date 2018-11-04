@@ -42,7 +42,7 @@ class MyFrame(wx.Frame):
                 print("Could not request results from Google Speech Recognition service; {0}".format(e))
         else:
             try:
-                app_id = "L4RJL5-LXGEWXRRAH"
+                app_id = "XXXXXX-XXXXXXXXX"
                 client = wolframalpha.Client(app_id)
                 res = client.query(input)
                 answer = next(res.results).text
